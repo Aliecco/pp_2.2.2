@@ -10,28 +10,17 @@ import java.util.List;
 @Service
 public class CarServiceImp implements CarService {
 
-    @Autowired
-    CarList carList;
+//    @Autowired
+//    CarList carList;
+//    private List<Car> cars = carList.getCars();
 
     @Override
     public List<Car> listCar(List<Car> cars, int count) {
-        if (5 > count) {
-            cars.subList(count, 5).clear();
-        }
-
-        return cars;
+        return cars.subList(0, count);
     }
-    /*
-    Хотел сделать так чтобы с контроллера не надо было отправлять лист Car,
-    но выдает NullPointException.
-    */
+
 //    @Override
 //    public List<Car> listCar(int count) {
-//        List<Car> cars = carList.getCars();
-//        if (5 > count) {
-//            cars.subList(count, 5).clear();
-//        }
-//
-//        return cars;
+//        return cars.subList(0, count);
 //    }
 }
